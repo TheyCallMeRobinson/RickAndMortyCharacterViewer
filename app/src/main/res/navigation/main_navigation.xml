@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/welcomeScreenFragment">
+
+    <fragment
+        android:id="@+id/characterViewerFragment"
+        android:name="com.example.rickandmortycharacterviewer.fragment.CharacterViewerFragment"
+        android:label="CharacterViewerFragment" />
+    <fragment
+        android:id="@+id/welcomeScreenFragment"
+        android:name="com.example.rickandmortycharacterviewer.fragment.WelcomeScreenFragment"
+        android:label="WelcomeScreenFragment" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_characterViewerFragment"
+            app:destination="@id/characterViewerFragment" />
+    </fragment>
+</navigation>

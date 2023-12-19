@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/character_viewer_motion_scene"
+    app:showPaths="true">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/arrow_back"/>
+
+    <ImageView
+        android:id="@+id/character_image_iv"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/some_random_rick_and_morty_series_character_image" />
+
+    <TextView
+        android:id="@+id/character_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="14pt"
+        tools:text="Rick Sanchez" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/roll_character_btn"
+        style="@style/button_style"
+        android:layout_marginBottom="100dp"
+        android:text="@string/roll_character" />
+
+    <include
+        android:id="@+id/include_detailed_info"
+        layout="@layout/include_detailed_character_info"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

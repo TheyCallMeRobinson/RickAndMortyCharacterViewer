@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="500">
+        <OnSwipe
+            motion:touchAnchorSide="middle"
+            motion:touchAnchorId="@id/character_image_iv"
+            motion:dragDirection="dragUp"/>
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/arrow_back"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/character_image_iv"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="100dp"
+            android:visibility="visible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/some_random_rick_and_morty_series_character_image" />
+
+        <Constraint
+            android:id="@+id/character_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="14pt"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/character_image_iv"
+            tools:text="Rick Sanchez" />
+
+        <Constraint
+            android:id="@+id/roll_character_btn"
+            style="@style/button_style"
+            android:layout_marginBottom="100dp"
+            android:text="@string/roll_character"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/include_detailed_info"
+            layout="@layout/include_detailed_character_info"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end">
+        <Constraint
+            android:id="@+id/back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/arrow_back"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/character_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="0dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/some_random_rick_and_morty_series_character_image" />
+
+        <Constraint
+            android:id="@+id/character_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="14pt"
+            android:visibility="invisible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/character_image_iv"
+            tools:text="Rick Sanchez" />
+
+        <Constraint
+            android:id="@+id/roll_character_btn"
+            style="@style/button_style"
+            android:layout_marginBottom="100dp"
+            android:text="@string/roll_character"
+            motion:layout_constraintTop_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/include_detailed_info"
+            layout="@layout/include_detailed_character_info"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>
